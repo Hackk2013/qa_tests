@@ -17,8 +17,6 @@ public class test {
     String city = "SV";
     String country = "SV";
     String pscd = "SV";
-//    String email = "SV";
-//    String pass = "SV";
 
 
 
