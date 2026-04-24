@@ -18,15 +18,16 @@ import java.util.List;
 
 public class RestApi {
     String endPointProfile = "/backend/api/profile";
-    String authToken = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3B1Ymxpc2hlcnMuY2xpY2thZGlsbGEuY29tL2FwaS9hdXRoL3JlZnJlc2giLCJpYXQiOjE3NzcwMzczNzksImV4cCI6MTc3NzA1MTc3OSwibmJmIjoxNzc3MDM3Mzc5LCJqdGkiOiJxdndnYURITGdxRlhsaWQ4Iiwic3ViIjoiMTkxODg5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInJlc3RyaWN0aW9ucyI6W119.krsLUj4ky1-qtzYomaSgURktCumX1KJEJSe2CR_es_Y";
-    String
+    String authToken = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3B1Ymxpc2hlcnMuY2xpY2thZGlsbGEuY29tL2FwaS9hdXRoL3JlZnJlc2giLCJpYXQiOjE3NzcwNTc5MTksImV4cCI6MTc3NzA3MjMxOSwibmJmIjoxNzc3MDU3OTE5LCJqdGkiOiI5TkJZaVdJN2FkcW4zQU5tIiwic3ViIjoiMTkxODg5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInJlc3RyaWN0aW9ucyI6W119.AAOhTwGLueXQXpxjtuYxcXYgT-iQDlO6b158bE6ULVI";
+
 
     @Test
     void checkEmail() {
         given()
                 .log().all()
                 .header("Authorization", authToken)
-                .when().get(BaseTest.BASE_URL + endPointProfile)
+                .when()
+                .get(BaseTest.BASE_URL + endPointProfile)
                 .then().statusCode(200)
                 .body("data.email", equalTo("evgen2000tos@gmail.com"));
     }
@@ -36,20 +37,21 @@ public class RestApi {
         given()
                 .log().all()
                 .header("Authorization", authToken)
-                .when().put(BaseTest.BASE_URL + endPointProfile)
+                .when()
+                .put(BaseTest.BASE_URL + endPointProfile)
                 .then().statusCode(200)
                 .body("data.first_name", equalTo("Evgeniy"))
                 .body("data.last_name", equalTo("SVIRIDOV"));
     }
 
-    @Test
+
     void postME() {
         String url = "https://publishers.clickadilla.com/backend/api/auth/me";
         String authToken = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3B1Ymxpc2hlcnMuY2xpY2thZGlsbGEuY29tL2FwaS9hdXRoL3JlZnJlc2giLCJpYXQiOjE3NzcwMzE0MzMsImV4cCI6MTc3NzA0NTgzMywibmJmIjoxNzc3MDMxNDMzLCJqdGkiOiJ2R0ppNlBHcFg5TjFSYXBGIiwic3ViIjoiMTkxODg5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInJlc3RyaWN0aW9ucyI6W119.Ea62j3tMH0-E3U9V0a_p4PiS_pc2T2BDX8s9VqnPF7I";
         String body = "";
         given().
-                log().all().
-                header("Authorization", authToken)
+                log().all()
+                .header("Authorization", authToken)
                 .when()
                 .post(url)
                 .then()

@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RestApi" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-04-24T15:49:55.089Z" hostname="MacBook-Pro-Evgenij.local" time="1.423">
+<testsuite name="RestApi" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-04-24T19:13:54.879Z" hostname="MacBook-Pro-Evgenij.local" time="2.376">
   <properties/>
-  <testcase name="validateFullJsonStructure()" classname="RestApi" time="1.416"/>
-  <system-out><![CDATA[Request method:	POST
+  <testcase name="putFIO()" classname="RestApi" time="1.335"/>
+  <testcase name="checkEmail()" classname="RestApi" time="0.417"/>
+  <testcase name="validateFullJsonStructure()" classname="RestApi" time="0.616"/>
+  <system-out><![CDATA[Request method:	PUT
+Request URI:	https://publishers.clickadilla.com/backend/api/profile
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3B1Ymxpc2hlcnMuY2xpY2thZGlsbGEuY29tL2FwaS9hdXRoL3JlZnJlc2giLCJpYXQiOjE3NzcwNTc5MTksImV4cCI6MTc3NzA3MjMxOSwibmJmIjoxNzc3MDU3OTE5LCJqdGkiOiI5TkJZaVdJN2FkcW4zQU5tIiwic3ViIjoiMTkxODg5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInJlc3RyaWN0aW9ucyI6W119.AAOhTwGLueXQXpxjtuYxcXYgT-iQDlO6b158bE6ULVI
+				Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Request method:	GET
+Request URI:	https://publishers.clickadilla.com/backend/api/profile
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3B1Ymxpc2hlcnMuY2xpY2thZGlsbGEuY29tL2FwaS9hdXRoL3JlZnJlc2giLCJpYXQiOjE3NzcwNTc5MTksImV4cCI6MTc3NzA3MjMxOSwibmJmIjoxNzc3MDU3OTE5LCJqdGkiOiI5TkJZaVdJN2FkcW4zQU5tIiwic3ViIjoiMTkxODg5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInJlc3RyaWN0aW9ucyI6W119.AAOhTwGLueXQXpxjtuYxcXYgT-iQDlO6b158bE6ULVI
+				Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Request method:	POST
 Request URI:	https://publishers.clickadilla.com/backend/api/auth/me
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		Authorization=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3B1Ymxpc2hlcnMuY2xpY2thZGlsbGEuY29tL2FwaS9hdXRoL3JlZnJlc2giLCJpYXQiOjE3NzcwMzczNzksImV4cCI6MTc3NzA1MTc3OSwibmJmIjoxNzc3MDM3Mzc5LCJqdGkiOiJxdndnYURITGdxRlhsaWQ4Iiwic3ViIjoiMTkxODg5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInJlc3RyaWN0aW9ucyI6W119.krsLUj4ky1-qtzYomaSgURktCumX1KJEJSe2CR_es_Y
+Headers:		Authorization=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3B1Ymxpc2hlcnMuY2xpY2thZGlsbGEuY29tL2FwaS9hdXRoL3JlZnJlc2giLCJpYXQiOjE3NzcwNTc5MTksImV4cCI6MTc3NzA3MjMxOSwibmJmIjoxNzc3MDU3OTE5LCJqdGkiOiI5TkJZaVdJN2FkcW4zQU5tIiwic3ViIjoiMTkxODg5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInJlc3RyaWN0aW9ucyI6W119.AAOhTwGLueXQXpxjtuYxcXYgT-iQDlO6b158bE6ULVI
 				Accept=*/*
 				Content-Type=application/json
 Cookies:		<none>
