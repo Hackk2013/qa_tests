@@ -1,0 +1,138 @@
+{
+  "data": {
+    "first_name": "Evgeniy",
+    "last_name": "SVIRIDOV",
+    "email": "evgen2000tos@gmail.com",
+    "email_verified_at": "2026-04-23T21:19:26.000000Z",
+    "balance": "$0.00",
+    "roles": [
+      "publisher"
+    ],
+    "has_pending_email_change": false,
+    "has_pending_profile_email_change": false,
+    "manager": {
+      "email": "mitchell@clickadilla.com",
+      "first_name": "Mitchell",
+      "last_name": "Clickadilla",
+      "nickname": "Mitchell Clickadilla",
+      "intercom_user_id": "5736698",
+      "contacts": [
+        {
+          "name": "telegram",
+          "value": "mitchell_click"
+        },
+        {
+          "name": "teams",
+          "value": "mitchell@clickadlla.com"
+        }
+      ],
+      "urgent_contacts": null
+    },
+    "account_manager": null,
+    "permissions": {
+      "landings": [
+        "archive",
+        "viewAny",
+        "create",
+        "updateDeepLink",
+        "seeShortUrlOf",
+        "updateIsRotated",
+        "updateRedirectChrome"
+      ],
+      "stats": [
+        "viewAny"
+      ],
+      "admin_spots": [
+        "updateMlCloseRatioInpagePush",
+        "updateMlCloseRatioModalInpagePush",
+        "updateBetterAdsInpagePush",
+        "updateBetterAdsMobileInpagePush",
+        "updateIsPositionLockedInpagePush",
+        "updateTargetingBanner",
+        "updateTargetingInpagePush",
+        "updateTargetingPush",
+        "updateTargetingPopunder",
+        "updateTargetingInStreamAd",
+        "updateTargetingNative",
+        "updateTargetingInterstitial",
+        "updateTargetingDirectLink",
+        "updateFriendlyGooglePopunder"
+      ],
+      "admin_payment_requests": [
+        "viewApproving",
+        "viewApproved",
+        "viewCompleted",
+        "viewRejected"
+      ],
+      "payment_claims": [
+        "create",
+        "viewAny",
+        "updateAny",
+        "reject"
+      ],
+      "ad_network_spot_links": [
+        "viewOnlyHisPublisher",
+        "seeAllUsers",
+        "create",
+        "update",
+        "delete"
+      ],
+      "notification_users": [
+        "viewAny",
+        "update"
+      ],
+      "tags": [
+        "create",
+        "copyAntiAdblockScript",
+        "viewAny"
+      ],
+      "see_adformats": [
+        "push",
+        "inpage_push",
+        "popunder",
+        "in_stream_ad",
+        "banner"
+      ],
+      "manage_spots_adformats": [
+        "push",
+        "inpage_push",
+        "popunder",
+        "in_stream_ad",
+        "banner"
+      ],
+      "create_more_than_one_spot_per_tag_adformats": [
+        "inpage_push",
+        "in_stream_ad",
+        "banner"
+      ],
+      "spots": [
+        "createInStreamAdInStream",
+        "createInStreamAdOverlay",
+        "createInStreamAdSlider",
+        "createInStreamAdOutStream",
+        "updateHidden",
+        "createPopunderPopunder",
+        "viewAny",
+        "create"
+      ],
+      "stats_reports": [
+        "statistics"
+      ]
+    },
+    "utm_source": null,
+    "utm_medium": null,
+    "utm_campaign": null,
+    "utm_content": null,
+    "utm_term": null,
+    "referrer_url": null,
+    "wrong_email_address": false,
+    "registration_date": "2026-04-23T21:19:26.000000Z",
+    "yandex_metrika_token_status": "not_set",
+    "google_analytics_refresh_token_status": "not_set",
+    "uuid": "a19d8532-c46e-4ba8-be43-048fe61c8d41",
+    "has_tags": false,
+    "has_deleted_tags": false,
+    "test_group_name": "\u0438\u043d\u043f\u0435\u0439\u0434\u0436 \u043d\u0435\u0436\u043d\u044b\u0439",
+    "dashly_hash": "c888aa014ae2cf70b87702b1f596652126841efc0bd274403e0849866835c5fe"
+  }
+}
