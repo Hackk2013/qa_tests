@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": ["first_name", "last_name", "email", "email_verified_at", "balance", "roles", "manager", "permissions"],
+      "properties": {
+        "first_name": {"type": "string"},
+        "last_name": {"type": "string"},
+        "email": {"type": "string"},
+        "email_verified_at": {"type": "string"}, // Дата в формате ISO
+        "balance": {"type": "string"}, // Валюта в формате "$0.00"
+        "roles": {"type": "array", "items": {"type": "string"}},
+        "manager": {
+          "type": "object",
+          "required": ["email", "first_name", "last_name", "nickname", "intercom_user_id", "contacts"],
+          "properties": {
+            "email": {"type": "string"},
+            "first_name": {"type": "string"},
+            "last_name": {"type": "string"},
+            "nickname": {"type": "string"},
+            "intercom_user_id": {"type": "string"},
+            "contacts": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name", "value"],
+                "properties": {
+                  "name": {"type": "string"},
+                  "value": {"type": "string"}
+                }
+              }
+            }
+          }
+        },
+        "permissions": {
+          "type": "object",
+          "properties": {
+            "landings": {"type": "array", "items": {"type": "string"}},
+            "stats": {"type": "array", "items": {"type": "string"}},
+            "admin_spots": {"type": "array", "items": {"type": "string"}},
+            "admin_payment_requests": {"type": "array", "items": {"type": "string"}},
+            "payment_claims": {"type": "array", "items": {"type": "string"}},
+            "ad_network_spot_links": {"type": "array", "items": {"type": "string"}},
+            "notification_users": {"type": "array", "items": {"type": "string"}},
+            "tags": {"type": "array", "items": {"type": "string"}},
+            "see_adformats": {"type": "array", "items": {"type": "string"}},
+            "manage_spots_adformats": {"type": "array", "items": {"type": "string"}},
+            "create_more_than_one_spot_per_tag_adformats": {"type": "array", "items": {"type": "string"}},
+            "spots": {"type": "array", "items": {"type": "string"}},
+            "stats_reports": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "utm_source": {"type": ["string", "null"]},
+        "utm_medium": {"type": ["string", "null"]},
+        "utm_campaign": {"type": ["string", "null"]},
+        "utm_content": {"type": ["string", "null"]},
+        "utm_term": {"type": ["string", "null"]},
+        "referrer_url": {"type": ["string", "null"]},
+        "wrong_email_address": {"type": "boolean"},
+        "registration_date": {"type": "string"}, // Дата в формате ISO
+        "yandex_metrika_token_status": {"type": "string"},
+        "google_analytics_refresh_token_status": {"type": "string"},
+        "uuid": {"type": "string"},
+        "has_tags": {"type": "boolean"},
+        "has_deleted_tags": {"type": "boolean"},
+        "test_group_name": {"type": "string"},
+        "dashly_hash": {"type": "string"}
+      }
+    }
+  }
+}
