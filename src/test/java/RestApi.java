@@ -3,17 +3,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.http.ContentType;
 import model.response.Response;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import io.restassured.module.jsv.JsonSchemaValidator;
 
 import java.util.List;
 
@@ -23,10 +19,11 @@ public class RestApi {
 
 
 
-//
+
         public static ObjectMapper omt = new ObjectMapper(); // создаем объект для сериализации\десериа... json ответа в джава класс и наоброт
-        public static model.response.token.Response geetToken() throws JsonProcessingException {
-            String responce = given()
+    public static model.response.token.Response geetToken()
+    private static String geetToken(){
+            String response = given()
                     .log().all()
                     .contentType(ContentType.JSON)
                     .when()
@@ -34,23 +31,16 @@ public class RestApi {
                     .then()
                     .extract().response().asString();
 
-            Response r = omt.readValue(responce, Response.class); // приобразую джейсон в класс Респонсе, где он раскладывается по полям
-            return r;
+            String r = RestApi.omt.readValue(response, model.response.token.Response.class); // приобразую джейсон в класс Респонсе, где он раскладывается по полям
+
+            return r.getData.getAccessToken();
         }
 
+        @Test
+        void takeToken(String r){
+            String token = r;
+        }
 
-//    @BeforeAll
-//    static void takeToken(){
-//
-//       String access_token = given()
-//                    .log().all()
-//                    .contentType(ContentType.JSON)
-//                    .when()
-//                    .post("https://publishers.clickadilla.com/backend/api/auth/refresh")
-//                    .then()
-//                .extract()
-//                .path("data.access_token");
-//    }
 
 
     @Test
