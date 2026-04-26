@@ -3,6 +3,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.http.ContentType;
 import model.response.Response;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
@@ -18,7 +19,38 @@ import java.util.List;
 
 public class RestApi {
     String endPointProfile = "/backend/api/profile";
-    String authToken = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3B1Ymxpc2hlcnMuY2xpY2thZGlsbGEuY29tL2FwaS9hdXRoL3JlZnJlc2giLCJpYXQiOjE3NzcwNTc5MTksImV4cCI6MTc3NzA3MjMxOSwibmJmIjoxNzc3MDU3OTE5LCJqdGkiOiI5TkJZaVdJN2FkcW4zQU5tIiwic3ViIjoiMTkxODg5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInJlc3RyaWN0aW9ucyI6W119.AAOhTwGLueXQXpxjtuYxcXYgT-iQDlO6b158bE6ULVI";
+    String authToken = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3B1Ymxpc2hlcnMuY2xpY2thZGlsbGEuY29tL2FwaS9hdXRoL2NhbGxiYWNrLWdvb2dsZSIsImlhdCI6MTc3NzE5Mjg2NiwiZXhwIjoxNzc3MjA3MjY2LCJuYmYiOjE3NzcxOTI4NjYsImp0aSI6IjhuTHZYRGxzb2xEM3dBRnIiLCJzdWIiOiIxOTE4ODkiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwicmVzdHJpY3Rpb25zIjpbXX0.QbkEhpIlLk6Uz9Eca2yWyBUKJ-HQ8X7dYjjF15TpqGI";
+
+
+
+//
+        public static ObjectMapper omt = new ObjectMapper(); // создаем объект для сериализации\десериа... json ответа в джава класс и наоброт
+        public static model.response.token.Response geetToken() throws JsonProcessingException {
+            String responce = given()
+                    .log().all()
+                    .contentType(ContentType.JSON)
+                    .when()
+                    .post("https://publishers.clickadilla.com/backend/api/auth/refresh")
+                    .then()
+                    .extract().response().asString();
+
+            Response r = omt.readValue(responce, Response.class); // приобразую джейсон в класс Респонсе, где он раскладывается по полям
+            return r;
+        }
+
+
+//    @BeforeAll
+//    static void takeToken(){
+//
+//       String access_token = given()
+//                    .log().all()
+//                    .contentType(ContentType.JSON)
+//                    .when()
+//                    .post("https://publishers.clickadilla.com/backend/api/auth/refresh")
+//                    .then()
+//                .extract()
+//                .path("data.access_token");
+//    }
 
 
     @Test
@@ -45,20 +77,7 @@ public class RestApi {
     }
 
 
-    void postME() {
-        String url = "https://publishers.clickadilla.com/backend/api/auth/me";
-        String authToken = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3B1Ymxpc2hlcnMuY2xpY2thZGlsbGEuY29tL2FwaS9hdXRoL3JlZnJlc2giLCJpYXQiOjE3NzcwMzE0MzMsImV4cCI6MTc3NzA0NTgzMywibmJmIjoxNzc3MDMxNDMzLCJqdGkiOiJ2R0ppNlBHcFg5TjFSYXBGIiwic3ViIjoiMTkxODg5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInJlc3RyaWN0aW9ucyI6W119.Ea62j3tMH0-E3U9V0a_p4PiS_pc2T2BDX8s9VqnPF7I";
-        String body = "";
-        given().
-                log().all()
-                .header("Authorization", authToken)
-                .when()
-                .post(url)
-                .then()
-                .statusCode(200)
-                .body("data", equalTo(""));
 
-    }
 
     @Test
     void validateFullJsonStructure() throws JsonProcessingException {

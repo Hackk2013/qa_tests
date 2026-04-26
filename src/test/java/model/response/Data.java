@@ -186,4 +186,8 @@ public class Data{
 	public Object getUtmSource(){
 		return utmSource;
 	}
+
+    public Permissions getResponce() {
+        return null;
+    }
 }
